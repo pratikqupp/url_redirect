@@ -1,11 +1,4 @@
-const socket = io("/");
-const videoGrid = document.getElementById("video-grid");
-const myVideo = document.createElement("video");
-const usersCounter = document.getElementById('users-counter');
-myVideo.muted = true;
-document.querySelector(".main__right").style.display = "flex";
-document.querySelector(".main__right").style.flex = "1";
-document.querySelector(".main__left").style.display = "none";
+
 document.addEventListener('DOMContentLoaded', function () {
   // Extract clinicId from the URL
   const clinicId = ROOM_ID;
