@@ -1,17 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Extract clinicId from the URL
-    // Get the current URL path
-    const currentPath = window.location.pathname;
-
-    // Split the path by '/' to get individual path segments
-    const pathSegments = currentPath.split('/');
-
-    // Find the clinicId in the path
-    const clinicIdIndex = pathSegments.indexOf('url_redirect') + 1; // Assuming clinicId is immediately after 'url_redirect'
-
-    // Extract the clinicId
-    const clinicId = clinicIdIndex >= 0 && clinicIdIndex < pathSegments.length ? pathSegments[clinicIdIndex] : null;
-
+    const urlParams = new URLSearchParams(window.location.search);
+    const clinicId = urlParams.get('clinicId');
 
     const apiUrl = 'https://script.google.com/macros/s/AKfycbwwdQmnQYdHo0VP2IjdiZv4ClrCeEo1TeiDx7pzAH-OyYcr0k2Q4JIrXNXCysx10jXs-g/exec'; // Replace with your API endpoint
 
