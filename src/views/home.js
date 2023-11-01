@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { el } from 'date-fns/locale';
 
 const App = (props) => {
-    const { clinicId} = props.match.params;
+  const { clinicId } = props.match.params;
   const [playstoreUrl, setPlaystoreUrl] = useState('');
   const [applestoreUrl, setApplestoreUrl] = useState('');
   const [loading, setLoading] = useState(true);
@@ -14,8 +15,11 @@ const App = (props) => {
       .get(apiUrl)
       .then((response) => {
         const data = response.data;
-        setPlaystoreUrl(data.playstoreUrl); // Replace with the actual response property
-        setApplestoreUrl(data.applestoreUrl); // Replace with the actual response property
+        if (isIOS) {
+          setApplestoreUrl(data.applestoreUrl);
+        } else {
+          setPlaystoreUrl(data.playstoreUrl);
+        }
         setLoading(false);
       })
       .catch((error) => {
