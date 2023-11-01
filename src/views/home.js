@@ -39,8 +39,6 @@ const App = (props) => {
         <div className="loader">Loading...</div>
       ) : error ? (
         <div className="message">{error}</div>
-      ) : isAndroid() ? (
-        <RedirectLink url={playstoreUrl} />
       ) : isIOS() ? (
         <RedirectLink url={applestoreUrl} />
       ) : (
