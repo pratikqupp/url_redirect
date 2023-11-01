@@ -14,9 +14,8 @@ const App = (props) => {
       .get(apiUrl)
       .then((response) => {
         const data = response.data;
-        if (isAndroid)
-          setPlaystoreUrl(data.playstoreUrl); // Replace with the actual response property
-        setApplestoreUrl(data.applestoreUrl); // Replace with the actual response property
+        setPlaystoreUrl(data.playstoreUrl);
+        setApplestoreUrl(data.applestoreUrl);
         setLoading(false);
       })
       .catch((error) => {
