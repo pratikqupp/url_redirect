@@ -44,7 +44,7 @@ const App = (props) => {
       ) : isIOS() ? (
         <RedirectLink url={applestoreUrl} />
       ) : (
-        <RedirectLink url={playstoreUrl} />
+        <RedirectLink url={applestoreUrl} />
       )}
     </div>
   );
