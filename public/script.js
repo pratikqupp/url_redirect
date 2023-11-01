@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const loader = document.querySelector('.loader');
   const message = document.querySelector('.message');
 
-  // Show loader while making the API call
-  loader.style.display = 'block';
+  // // Show loader while making the API call
+  // loader.style.display = 'block';
 
   // Make an API call to get the app store URLs
   fetch(apiUrl, {
@@ -49,10 +49,10 @@ function isIOS() {
 }
 
 function displayErrorMessage() {
-  const loader = document.querySelector('.loader');
-  const message = document.querySelector('.message');
+  // const loader = document.querySelector('.loader');
+  // const message = document.querySelector('.message');
 
-  loader.style.display = 'none';
-  message.textContent = 'Qup Redirect Error: Unsupported Device';
-  message.style.display = 'block';
+  // loader.style.display = 'none';
+  // message.textContent = 'Qup Redirect Error: Unsupported Device';
+  // message.style.display = 'block';
 }
