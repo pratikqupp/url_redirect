@@ -9,7 +9,7 @@ const App = (props) => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const apiUrl = 'https://pratikqupp.github.io/url_redirect/jsondata.json'; // Replace with your API endpoint
+    const apiUrl = 'https://pratikqupp.github.io/url_redirect/jsondata.json';
     axios
       .get(apiUrl)
       .then((response) => {
@@ -26,11 +26,11 @@ const App = (props) => {
   }, []);
 
   function isAndroid() {
-    return /Android/i.test(userAgent);
+    return /Android/i.test(navigator.userAgent);
   }
 
   function isIOS() {
-    return /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
   }
 
   return (
