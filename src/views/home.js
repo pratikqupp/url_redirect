@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { el } from 'date-fns/locale';
 
 const App = (props) => {
   const { clinicId } = props.match.params;
@@ -15,11 +14,9 @@ const App = (props) => {
       .get(apiUrl)
       .then((response) => {
         const data = response.data;
-        if (isIOS) {
-          setApplestoreUrl(data.applestoreUrl);
-        } else {
-          setPlaystoreUrl(data.playstoreUrl);
-        }
+        if (isAndroid)
+          setPlaystoreUrl(data.playstoreUrl); // Replace with the actual response property
+        setApplestoreUrl(data.applestoreUrl); // Replace with the actual response property
         setLoading(false);
       })
       .catch((error) => {
@@ -30,11 +27,11 @@ const App = (props) => {
   }, []);
 
   function isAndroid() {
-    return /Android/i.test(navigator.userAgent);
+    return /Android/i.test(userAgent);
   }
 
   function isIOS() {
-    return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    return /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
   }
 
   return (
