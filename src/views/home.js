@@ -30,7 +30,7 @@ const App = (props) => {
   }
 
   function isIOS() {
-    return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    return /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent) && !window.MSStream;
   }
 
   return (
