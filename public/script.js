@@ -13,11 +13,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Make an API call to get the app store URLs
   fetch(apiUrl, {
-    method: 'POST', // or 'GET' or 'PUT', etc., depending on your API
+    method: "POST",
+    body: JSON.stringify({
+      clinicId: clinicId
+    }),
     headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ clinicId: clinicId }),
+      "Content-type": "application/json; charset=UTF-8"
+    }
   })
     .then((response) => response.json())
     .then((data) => {
