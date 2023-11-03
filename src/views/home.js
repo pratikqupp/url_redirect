@@ -9,7 +9,7 @@ const App = (props) => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const apiUrl = 'https://pratikqupp.github.io/url_redirect/jsondata.json';
+    const apiUrl = 'link.up.railway.app/'+clinicId;
     axios
       .get(apiUrl)
       .then((response) => {
