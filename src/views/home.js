@@ -9,7 +9,7 @@ const App = (props) => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const apiUrl = 'https://apilink-production.up.railway.app/'+clinicId;
+    const apiUrl = 'https://apilink-production.up.railway.app/'+props.match.params;
     axios
       .get(apiUrl)
       .then((response) => {
