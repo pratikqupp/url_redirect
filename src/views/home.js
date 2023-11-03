@@ -7,9 +7,8 @@ const App = (props) => {
   const [applestoreUrl, setApplestoreUrl] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-
   useEffect(() => {
-    const apiUrl = 'https://apilink-production.up.railway.app/'+props.match.params;
+    const apiUrl = 'https://apilink-production.up.railway.app/' + clinicId;
     axios
       .get(apiUrl)
       .then((response) => {

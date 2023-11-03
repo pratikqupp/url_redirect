@@ -9,7 +9,7 @@ const App = () => {
   return (
     <Router>
       <div>
-        <Route component={Home} exact path="/:drName" />
+        <Route component={Home} exact path="/:clinicId" />
       </div>
     </Router>
   );
