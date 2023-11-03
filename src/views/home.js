@@ -7,10 +7,16 @@ const App = (props) => {
   const [applestoreUrl, setApplestoreUrl] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+
   useEffect(() => {
     const apiUrl = 'https://apilink-production.up.railway.app/' + clinicId;
+    const config = {
+      headers: {
+        'Content-Type': 'application/json', // Replace with the appropriate origin or '*'
+      }
+    };
     axios
-      .get(apiUrl)
+      .get(apiUrl,config)
       .then((response) => {
         const data = response.data;
         setPlaystoreUrl(data.playstoreUrl);
