@@ -12,7 +12,7 @@ const App = (props) => {
     const apiUrl = 'https://apilink-production.up.railway.app/' + clinicId;
     const config = {
       headers: {
-        'Content-Type': 'application/json', // Replace with the appropriate origin or '*'
+        "Content-Type": "application/json",
       }
     };
     axios
