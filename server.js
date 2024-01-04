@@ -40,7 +40,7 @@ function fetchData(clinicId, req, res) {
     })
     .catch((error) => {
       console.error('API call error:', error);
-      res.status(500).send('Qup Redirect Error: Unsupported Device');
+      res.status(500).send('Qup Redirect Error: Clinic not Found');
     });
 }
 
