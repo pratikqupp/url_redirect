@@ -23,10 +23,7 @@
     "react-router-dom": "^5.2.0"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "GENERATE_SOURCEMAP=false craco build",
-    "test": "craco test --env=jsdom",
-    "eject": "craco eject"
+    "start": "craco start"
   },
   "engines": {
     "node": "16.x"
