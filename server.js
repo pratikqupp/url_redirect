@@ -7,6 +7,22 @@ const port = process.env.PORT || 5000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/634096/:clinicId', (req, res) => {
+  const { clinicId } = req.params;
+  if (clinicId) {
+    fetchData(clinicId, req, res);
+  } else {
+    res.send('Invalid clinic ID');
+  }
+});
+app.get('/QUPAPP/:clinicId', (req, res) => {
+  const { clinicId } = req.params;
+  if (clinicId) {
+    fetchData(clinicId, req, res);
+  } else {
+    res.send('Invalid clinic ID');
+  }
+});
 app.get('*', (req, res) => {
   const clinicId = req.path.replace('/', '');
 
@@ -16,7 +32,6 @@ app.get('*', (req, res) => {
     res.send('Invalid clinic ID');
   }
 });
-
 function fetchData(clinicId, req, res) {
   const apiUrl = 'https://apilink-production.up.railway.app/' + clinicId;
   const config = {
